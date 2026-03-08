@@ -4,19 +4,18 @@
   <meta charset="UTF-8" />
   <title>Redirecting...</title>
   <script>
-    // GitHub Pages SPA redirect hack
-    // Routes like /holisticai-redesign-showcase/v1/dashboard should load /holisticai-redesign-showcase/v1/index.html
+    // SPA redirect for static hosting
+    // Routes like /v1/dashboard should load /v1/index.html
     var path = window.location.pathname;
-    var base = '/holisticai-redesign-showcase';
 
-    if (path.startsWith(base + '/v1')) {
-      window.location.replace(base + '/v1/?route=' + encodeURIComponent(path.replace(base + '/v1', '')));
-    } else if (path.startsWith(base + '/v2')) {
-      window.location.replace(base + '/v2/?route=' + encodeURIComponent(path.replace(base + '/v2', '')));
-    } else if (path.startsWith(base + '/v3')) {
-      window.location.replace(base + '/v3/?route=' + encodeURIComponent(path.replace(base + '/v3', '')));
+    if (path.startsWith('/v1')) {
+      window.location.replace('/v1/?route=' + encodeURIComponent(path.replace('/v1', '')));
+    } else if (path.startsWith('/v2')) {
+      window.location.replace('/v2/?route=' + encodeURIComponent(path.replace('/v2', '')));
+    } else if (path.startsWith('/v3')) {
+      window.location.replace('/v3/?route=' + encodeURIComponent(path.replace('/v3', '')));
     } else {
-      window.location.replace(base + '/');
+      window.location.replace('/');
     }
   </script>
 </head>
