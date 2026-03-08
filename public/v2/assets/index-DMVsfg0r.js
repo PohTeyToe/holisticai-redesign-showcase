@@ -96,4 +96,4 @@ Please change the parent <Route path="${p}"> to <Route path="${p==="/"?"*":`${p}
             grid-template-columns: 1fr !important;
           }
         }
-      `})]})}function Vj(){return a.jsxs(Z1,{children:[a.jsx(ln,{path:"/",element:a.jsx(uj,{})}),a.jsxs(ln,{element:a.jsx(dj,{}),children:[a.jsx(ln,{path:"/dashboard",element:a.jsx(jj,{})}),a.jsx(ln,{path:"/results",element:a.jsx(Pj,{})}),a.jsx(ln,{path:"/scanner",element:a.jsx(Lj,{})}),a.jsx(ln,{path:"/meal-plan",element:a.jsx(Nj,{})})]})]})}Sa.createRoot(document.getElementById("root")).render(a.jsx(F0.StrictMode,{children:a.jsx(kx,{basename:"/v2",children:a.jsx(Vj,{})})}));
+      `})]})}function Vj(){return a.jsxs(Z1,{children:[a.jsx(ln,{path:"/",element:a.jsx(uj,{})}),a.jsxs(ln,{element:a.jsx(dj,{}),children:[a.jsx(ln,{path:"/dashboard",element:a.jsx(jj,{})}),a.jsx(ln,{path:"/results",element:a.jsx(Pj,{})}),a.jsx(ln,{path:"/scanner",element:a.jsx(Lj,{})}),a.jsx(ln,{path:"/meal-plan",element:a.jsx(Nj,{})})]})]})}Sa.createRoot(document.getElementById("root")).render(a.jsx(F0.StrictMode,{children:a.jsx(kx,{basename:"/holisticai-redesign-showcase/v2",children:a.jsx(Vj,{})})}));
