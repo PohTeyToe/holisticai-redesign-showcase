@@ -78,7 +78,8 @@ Each variant in `build-tmp/` is an independent Vite project with its own `packag
 showcase/
   public/              # Deployed static site
     index.html         # Selector page (choose a variant)
-    404.html           # SPA fallback for GitHub Pages
+    404.html           # SPA fallback redirect
+    _redirects         # Render static site rewrite rules
     v1/                # Built output for variant 1
     v2/                # Built output for variant 2
     v3/                # Built output for variant 3
