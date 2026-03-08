@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E" />
-    <script type="module" crossorigin src="/holisticai-redesign-showcase/v2/assets/index-DMVsfg0r.js"></script>
+    <script type="module" crossorigin src="/holisticai-redesign-showcase/v2/assets/index-D9OmghQo.js"></script>
     <link rel="stylesheet" crossorigin href="/holisticai-redesign-showcase/v2/assets/index-4hwjn8MB.css">
   </head>
   <body>
@@ -20,9 +20,19 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
         </a>
         <a href="/holisticai-redesign-showcase/v1/" style="display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#1a1a1a;border:1px solid #2a2a2a;text-decoration:none;color:#a3a3a3;font-size:0.65rem;font-weight:700;transition:all 0.2s;" onmouseover="this.style.borderColor='#22c55e';this.style.color='#22c55e'" onmouseout="this.style.borderColor='#2a2a2a';this.style.color='#a3a3a3'">V1</a>
-        <span style="font-size:0.7rem;font-weight:700;color:#6366f1;padding:0 0.3rem;letter-spacing:0.05em;">V2</span>
+        <span style="font-size:0.7rem;font-weight:700;color:#14b8a6;padding:0 0.3rem;letter-spacing:0.05em;">V2</span>
         <a href="/holisticai-redesign-showcase/v3/" style="display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#1a1a1a;border:1px solid #2a2a2a;text-decoration:none;color:#a3a3a3;font-size:0.65rem;font-weight:700;transition:all 0.2s;" onmouseover="this.style.borderColor='#ed7523';this.style.color='#ed7523'" onmouseout="this.style.borderColor='#2a2a2a';this.style.color='#a3a3a3'">V3</a>
       </div>
     </div>
+    <script>
+      // GitHub Pages SPA routing: handle ?route= from 404.html redirect
+      (function() {
+        var params = new URLSearchParams(window.location.search);
+        var route = params.get('route');
+        if (route) {
+          window.history.replaceState(null, '', '/holisticai-redesign-showcase/v2' + route);
+        }
+      })();
+    </script>
   </body>
 </html>

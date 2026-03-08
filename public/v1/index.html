@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E" />
-    <script type="module" crossorigin src="/holisticai-redesign-showcase/v1/assets/index-BXEB1rJt.js"></script>
+    <script type="module" crossorigin src="/holisticai-redesign-showcase/v1/assets/index-Ddaq4lxO.js"></script>
     <link rel="stylesheet" crossorigin href="/holisticai-redesign-showcase/v1/assets/index-Dootd0qA.css">
   </head>
   <body>
@@ -24,5 +24,15 @@
         <a href="/holisticai-redesign-showcase/v3/" style="display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#1a1a1a;border:1px solid #2a2a2a;text-decoration:none;color:#a3a3a3;font-size:0.65rem;font-weight:700;transition:all 0.2s;" onmouseover="this.style.borderColor='#ed7523';this.style.color='#ed7523'" onmouseout="this.style.borderColor='#2a2a2a';this.style.color='#a3a3a3'">V3</a>
       </div>
     </div>
+    <script>
+      // GitHub Pages SPA routing: handle ?route= from 404.html redirect
+      (function() {
+        var params = new URLSearchParams(window.location.search);
+        var route = params.get('route');
+        if (route) {
+          window.history.replaceState(null, '', '/holisticai-redesign-showcase/v1' + route);
+        }
+      })();
+    </script>
   </body>
 </html>
