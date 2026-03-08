@@ -1,0 +1,9 @@
+{
+  "name": "holisticai-redesign-showcase",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Three redesign variants of the HolisticAI health portal landing page",
+  "scripts": {
+    "build": "echo 'Pre-built static site — deploy public/ directory'"
+  }
+}

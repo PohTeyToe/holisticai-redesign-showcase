@@ -1,0 +1,17 @@
+{
+  "outputDirectory": "public",
+  "rewrites": [
+    { "source": "/v1/(.*)", "destination": "/v1/index.html" },
+    { "source": "/v2/(.*)", "destination": "/v2/index.html" },
+    { "source": "/v3/(.*)", "destination": "/v3/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" }
+      ]
+    }
+  ]
+}
