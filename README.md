@@ -2,7 +2,7 @@
 
 Three landing page and app redesign variants for the [HolisticAI Health Portal](https://github.com/PohTeyToe/VJDS), built for stakeholder review. Each variant takes a different approach to visual design, animation, and interaction — from conservative refinement to bold experimentation.
 
-**Live demo:** https://pohteytoe.github.io/holisticai-redesign-showcase/
+**Live demo:** https://holisticai-redesign-showcase.onrender.com
 
 ---
 
