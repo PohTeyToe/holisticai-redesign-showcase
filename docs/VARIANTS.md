@@ -42,6 +42,14 @@ A structural departure. Instead of traditional scrolling, the landing page uses 
 
 ---
 
+## Cross-Variant Navigation
+
+A floating **variant switcher pill** is injected as pure HTML (outside React's root div) at the bottom-center of every page. It provides instant switching between v1/v2/v3 and a link back to the selector page. Each variant's hero CTA ("Begin Your Journey") links to `/dashboard` for a realistic app flow.
+
+> **Animation reliability note:** Page transition animations (`AnimatePresence mode="wait"` wrapping `<Outlet />`) were removed from V2 and V3 due to an intermittent blank-page bug. The exit animation race condition could leave entering pages stuck at `opacity: 0`. Pages now render immediately without enter/exit transitions. V1 was unaffected (uses CSS-only animations).
+
+---
+
 ## Page-by-Page Comparison
 
 ### Landing Page

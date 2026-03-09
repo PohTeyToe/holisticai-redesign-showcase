@@ -32,7 +32,7 @@ Each variant includes 5 pages:
 | Wellness Scanner | Multi-step wellness questionnaire with progress tracking |
 | Meal Plan | Personalized daily meal plans with nutritional breakdowns |
 
-A floating **variant switcher** (bottom-right) lets you jump between v1/v2/v3 without leaving the current page type. Inside app pages, a **nav pill** (top-left) links to the other app pages within the same variant.
+A floating **variant switcher** pill (bottom-center) lets you jump between v1/v2/v3 at any time. Each variant's hero CTA ("Begin Your Journey") links directly to its dashboard for a realistic app flow. Inside app pages, each variant's own navbar links to the other pages within that variant.
 
 ## Shared Design DNA
 
@@ -62,15 +62,22 @@ cd holisticai-redesign-showcase
 
 # Serve the pre-built site (any static server works)
 npx serve public
-
-# Or build a variant from source
-cd build-tmp/v1
-npm install
-npm run build
-# Output lands in build-tmp/v1/dist/
 ```
 
-Each variant in `build-tmp/` is an independent Vite project with its own `package.json`, `vite.config.ts`, and `src/` directory.
+### Rebuilding a variant from source
+
+Each variant in `build-tmp/` is an independent Vite project. To rebuild:
+
+```bash
+cd build-tmp/v2
+npm install
+MSYS_NO_PATHCONV=1 npx vite build --base=/v2/
+# Copy dist/ into public/v2/
+```
+
+> **Note (Git Bash / MINGW):** The `MSYS_NO_PATHCONV=1` prefix is required to prevent MINGW from mangling the `--base=/v2/` path. Not needed on macOS/Linux.
+
+After building, re-inject the variant switcher HTML into `public/vX/index.html` (the `<div id="variant-nav">` block outside the React root) and copy `index.html` to `404.html` for SPA routing.
 
 ## Project Structure
 
@@ -93,6 +100,22 @@ showcase/
   vercel.json          # Vercel deployment config
 ```
 
+## Deployment
+
+Hosted as a **Render static site** on the `main` branch (single branch, no feature branches).
+
+- **Render service:** `srv-d6msr46a2pns73ddogc0`
+- **Auto-deploy:** enabled on push to `main`
+- **SPA routing:** handled by `public/_redirects` (`/vX/* → /vX/index.html 200`)
+- **Cache:** Render CDN caches aggressively; trigger a manual deploy with `clearCache` if stale content appears after push
+
+## Known Fixes
+
+- **Blank internal pages (V2/V3):** Caused by `AnimatePresence mode="wait"` wrapping `<Outlet />` in AppLayout. If the exit animation race-conditioned, the entering page stayed at `opacity: 0` permanently. Fixed by removing the AnimatePresence wrapper entirely — pages now render without transition animations.
+- **V2 dashboard animations:** `useInView`-based conditional animations didn't fire for above-fold content. Fixed by using direct `animate` props instead.
+- **V3 GeometricOrb:** `whileInView` on SVG elements failed for above-fold hero content. Fixed by switching to `animate`.
+
 ## Documentation
 
-- [Variant Comparison](docs/VARIANTS.md) — detailed side-by-side breakdown of all three variants, page-by-page features, and recommendations for which to choose.
+- [Variant Comparison](docs/VARIANTS.md) — detailed side-by-side breakdown of all three variants, page-by-page features, and recommendations for which to choose
+- [Parent Project Tracker](../OVERVIEW.md) — phase overview and variant status
